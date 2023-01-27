@@ -32,6 +32,7 @@ export class GenLite {
         this.installHook(PlayerInfo.prototype, 'updateSkills', this.hook_PlayerInfo_updateSkills, this);
         this.installHook(window, 'initializeUI', this.hook_window_initializeUI, this);
         this.installHook(Game.prototype, 'combatUpdate',  this.hook_Game_combatUpdate,  this);
+        this.installHook(Game.prototype, 'playerAction', this.hook_Game_playerAction, this);
     }
 
     hook_Camera_update() {
@@ -108,10 +109,19 @@ export class GenLite {
             }
         }
     }
+
     hook_Game_combatUpdate() {
         for (var i = 0; i < this.moduleList.length; i++) {
             if(typeof this.moduleList[i].combatUpdate === 'function') {
                 this.moduleList[i].combatUpdate.apply(this.moduleList[i], arguments);
+            }
+        }
+    }
+
+    hook_Game_playerAction() {
+        for (var i = 0; i < this.moduleList.length; i++) {
+            if(typeof this.moduleList[i].playerAction === 'function') {
+                this.moduleList[i].playerAction.apply(this.moduleList[i], arguments);
             }
         }
     }

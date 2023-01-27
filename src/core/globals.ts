@@ -91,3 +91,7 @@ declare const Chat: {
 declare const NPC: {
     [key: string]: any,
 }
+
+declare const SFX_PLAYER: {
+    [key: string]: any,
+}
