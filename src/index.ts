@@ -17,6 +17,8 @@ import { GenLiteMenuScaler } from "./plugins/genlite-menu-scaler.plugin";
 import { GenLiteLocationsPlugin } from "./plugins/genlite-locations.plugin";
 import { GenLiteNPCMenuSwapperPlugin } from "./plugins/genlite-npcmenuswapper.plugin";
 import { GenLiteItemTooltips } from "./plugins/genlite-item-tooltips.plugin";
+import {GenLiteMessagingSystem} from "./plugins/genlite-messaging-system.plugin";
+import {SamualInventoryNotificationPlugin} from "./plugins/samual-inventory-notification.plugin";
 
 
 
@@ -45,4 +47,6 @@ import { GenLiteItemTooltips } from "./plugins/genlite-item-tooltips.plugin";
     await genlite.pluginLoader.addPlugin(GenLiteLocationsPlugin);
     await genlite.pluginLoader.addPlugin(GenLiteNPCMenuSwapperPlugin);
     await genlite.pluginLoader.addPlugin(GenLiteItemTooltips);
+    await genlite.pluginLoader.addPlugin(GenLiteMessagingSystem);
+    await genlite.pluginLoader.addPlugin(SamualInventoryNotificationPlugin);
 })();
