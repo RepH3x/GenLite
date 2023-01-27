@@ -47,7 +47,7 @@ export class GenLiteItemTooltips {
         let genfanadToolTip = document.getElementById("skill_status_popup");
         this.itemToolTip = <HTMLElement> genfanadToolTip.cloneNode(true);
         this.itemToolTip.id = "GenLite_Item_Tooltip"
-        this.itemToolTip.innerHTML = "samual smells";
+        this.itemToolTip.innerHTML = "whoever made this plugin has body odor";
         const computedStyle = window.getComputedStyle(genfanadToolTip);
         Array.from(computedStyle).forEach(key => this.itemToolTip.style.setProperty(key, computedStyle.getPropertyValue(key), computedStyle.getPropertyPriority(key)))      
         this.itemToolTip.style.setProperty("-webkit-text-fill-color", "");
@@ -119,7 +119,7 @@ export class GenLiteItemTooltips {
         let healingAmount = Math.min(healedHealth - curHealth, healing)
         let textColor = (curHealth + healing > totalHealth) ? "red" : "LimeGreen";
         callback_this.itemToolTip.innerHTML = `
-        <div>Heal Amount: <span style="color:${textColor}">${healing}</span></div>
+        <div>Heal Amount: <span style="color:${textColor}">${healingAmount}</span></div>
         <div>Health: <span style="color:${textColor}">${healedHealth}</span>/${totalHealth}</div>`
 
         let healthbar = document.getElementById("new_ux-hp-bar__meter--bar");
